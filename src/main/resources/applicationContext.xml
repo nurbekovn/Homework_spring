@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="application2.properties"/>
+    <bean id ="man" class="example2.Man">
+        <property name="name" value="${man.name}"/>
+        <property name="age" value="${man.age}"/>
+    </bean>
+
+
+    <bean id ="fish" class="example2.Fish">
+        <constructor-arg ref="man"/>
+        <property name="breedOfFish" value="${fish.breed}"/>
+        <property name="colorOfFish" value="${fish.color}"/>
+    </bean>
+
+    <bean id ="pappy" class="example2.Pappy">
+        <constructor-arg ref="man"/>
+        <property name="breedOfPappy" value="${pappy.breed}"/>
+        <property name="colorOfPappy" value="${pappy.color}"/>
+    </bean>
+
+</beans>

@@ -22,7 +22,7 @@ public class Horse implements Animal{
     @Override
     public void animalPlus() {
         System.out.println("Horse is a best animal ");
-        this.colorOfHorse = colorOfHorse;
+//        this.colorOfHorse = colorOfHorse;
         System.out.println(getBreedOfHorse());
         System.out.println(getColorOfHorse());
 

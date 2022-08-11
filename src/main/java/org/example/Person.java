@@ -25,8 +25,7 @@ public class Person {
     @Value("${person.age}")
     private int age;
     private Animal animal;
-    @Autowired
-    private Parrot parrot;
+    private Animal animal2;
 
 
     public Person(String name, int age, Animal animal) {
@@ -36,8 +35,9 @@ public class Person {
     }
 
     @Autowired
-    public Person(@Qualifier("horse") Animal animal) {
+    public Person(@Qualifier("horse") Animal animal, @Qualifier("parrot")Animal animal2) {
         this.animal = animal;
+        this.animal2 = animal2;
     }
 
     @PostConstruct
@@ -51,7 +51,7 @@ public class Person {
     }
     public void callYourFavoriteAnimal(){
         animal.animalPlus();
-        parrot.animalPlus();
+        animal2.animalPlus();
         System.out.println(getName());
         System.out.println(getAge());
     }
